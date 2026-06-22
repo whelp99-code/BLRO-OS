@@ -1,0 +1,40 @@
+# portal Redis :6380 점유 시 c-stack은 :6382 사용
+# Usage:
+#   docker compose -f docker-compose.c-stack.yml up -d
+#   node scripts/c-stack-health.mjs --required-only
+#
+# 앱 프로세스(3110,3010,4100,3500)는 별도 기동 — AIOSv2 integration:stack 또는 수동
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: c-stack-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ai_portal
+      POSTGRES_PASSWORD: ai_portal
+      POSTGRES_DB: blro_operating_os
+    ports:
+      - "5435:5432"
+    volumes:
+      - c_stack_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_portal -d blro_operating_os"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: c-stack-redis
+    restart: unless-stopped
+    ports:
+      - "6382:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  c_stack_postgres:
