@@ -7,35 +7,39 @@
 
 ---
 
-## 0. 현재 위치 (2026-06-22)
+## 0. 현재 위치 (2026-06-22, main 기준)
 
 | 구분 | 상태 |
 |------|------|
 | **기술 스모크** | health 8/8, E2E 1–4 스크립트 PASS |
 | **제품 통합** | P1 본작업 미완 — AppShell 단일화·실데이터 브리핑 필요 |
-| **PR 분할** | BLRO-OS #2·#3, AIOSv2 #2→#6 스택 오픈 |
-| **원본 브랜치** | `cursor/c-stack-p0-p6-implementation` → 스택 머지 후 삭제 |
+| **BLRO-OS main** | `9a6a20f` — PR [#2](https://github.com/whelp99-code/BLRO-OS/pull/2)·[#3](https://github.com/whelp99-code/BLRO-OS/pull/3) **MERGED** |
+| **AIOSv2 main** | `c994213` — PR #2 MERGED; #3–#6 로컬 스택 머지 후 push (#4–#6 GitHub closed superseded) |
+| **원본 브랜치** | `cursor/c-stack-p0-p6-implementation` — **삭제됨** (remote·local) |
+| **현재 주차** | **W1 (P0) ~85%** — W2+ 제품 본작업 미착수 |
+| **Done 범례** | ✅ 완료 · 🟡 스캐폴딩 · ☐ 미착수 → [41-티켓-전량-상세](41-티켓-전량-상세.md) |
+| **주차별 상세** | [docs/41-weeks/](41-weeks/README.md) W01–W12 개별 문서 |
 
 ---
 
-## 1. PR 맵 (리뷰 단위)
+## 1. PR 맵 (리뷰 단위) — **머지 완료**
 
 ### BLRO-OS (`whelp99-code/BLRO-OS`)
 
-| PR | 브랜치 | 범위 | 머지 순서 |
-|----|--------|------|-----------|
-| [#2](https://github.com/whelp99-code/BLRO-OS/pull/2) | `cursor/c-stack-infra-health` | compose, HEALTH-REGISTRY, c-stack-health, E2E 사전조건 | 1 |
-| [#3](https://github.com/whelp99-code/BLRO-OS/pull/3) | `cursor/c-stack-strategy-docs` | 전략·ADR·runbook·e2e-scenarios | 1 (병렬) |
+| PR | 브랜치 | 범위 | 상태 |
+|----|--------|------|------|
+| [#2](https://github.com/whelp99-code/BLRO-OS/pull/2) | `cursor/c-stack-infra-health` | compose, HEALTH-REGISTRY, c-stack-health | **MERGED** |
+| [#3](https://github.com/whelp99-code/BLRO-OS/pull/3) | `cursor/c-stack-strategy-docs` | 전략·ADR·runbook·e2e-scenarios | **MERGED** |
 
 ### AIOSv2_integration (`whelp99-code/AIOSv2_integration`)
 
-| PR | 브랜치 | Phase | 머지 순서 |
-|----|--------|-------|-----------|
-| [#2](https://github.com/whelp99-code/AIOSv2_integration/pull/2) | `cursor/schema-m1-m2` | P0 M1–M2 | 1 |
-| [#3](https://github.com/whelp99-code/AIOSv2_integration/pull/3) | `cursor/data-plane-p2` | P2 | 2 |
-| [#4](https://github.com/whelp99-code/AIOSv2_integration/pull/4) | `cursor/command-approval-p1` | P1 | 3 |
-| [#5](https://github.com/whelp99-code/AIOSv2_integration/pull/5) | `cursor/adapters-p3-p5` | P3–P5 | 4 |
-| [#6](https://github.com/whelp99-code/AIOSv2_integration/pull/6) | `cursor/hub-wiring-ci` | P0/P6 CI | 5 |
+| PR | 브랜치 | Phase | 상태 |
+|----|--------|-------|------|
+| [#2](https://github.com/whelp99-code/AIOSv2_integration/pull/2) | `cursor/schema-m1-m2` | P0 M1–M2 | **MERGED** |
+| #3 | `cursor/data-plane-p2` | P2 | main `c994213` (로컬 머지) |
+| #4 | `cursor/command-approval-p1` | P1 | main `c994213` (로컬 머지) |
+| #5 | `cursor/adapters-p3-p5` | P3–P5 | main `c994213` (로컬 머지) |
+| #6 | `cursor/hub-wiring-ci` | P0/P6 CI | main `c994213` (로컬 머지) |
 
 ```mermaid
 flowchart TB
@@ -224,7 +228,9 @@ flowchart TB
 
 | 문서 | 역할 |
 |------|------|
+| [41-weeks/](41-weeks/README.md) | W01–W12 주차별 상세 (개별 파일) |
+| [41-티켓-전량-상세](41-티켓-전량-상세.md) | 티켓 전량·Done·PR·검증 |
 | [30-CEO-직원별-통합-실행-계획서](30-CEO-직원별-통합-실행-계획서-Multi-Persona.md) | 페르소나·티켓 SSOT |
-| [31-CEO-지시용-티켓-체크리스트](31-CEO-지시용-티켓-체크리스트.md) | Done 체크 |
+| [31-CEO-지시용-티켓-체크리스트](31-CEO-지시용-티켓-체크리스트.md) | Done 체크 (31 ↔ 41 동기화) |
 | [33-C방향](33-C방향-통합-전략-및-P0-결정서.md) | 전략·P0 결정 |
 | [ops/c-stack-runbook](ops/c-stack-runbook.md) | 운영 |
