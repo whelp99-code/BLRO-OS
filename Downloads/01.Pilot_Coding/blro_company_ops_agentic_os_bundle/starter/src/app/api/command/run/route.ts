@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { routeTask } from "@/server/orchestrator/task-router";
-import { requiresApproval } from "@/server/orchestrator/approval-gateway";
+import { approvalReason, requiresApproval } from "@/server/orchestrator/approval-gateway";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
@@ -14,6 +14,7 @@ export async function POST(request: Request) {
       status: approval ? "WAITING_APPROVAL" : "SUCCESS",
       plan,
       approvalRequired: approval,
+      approvalReason: approval ? approvalReason(plan.actions) : null,
     },
     error: null,
   });

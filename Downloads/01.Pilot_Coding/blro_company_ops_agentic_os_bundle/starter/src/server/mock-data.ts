@@ -32,9 +32,9 @@ export const mailItems = [
 ];
 
 export const approvals = [
-  { id: "apv_001", title: "성우하이텍 POC VM 정보 요청 메일 발송", type: "SEND_EMAIL", risk: "MEDIUM", status: "PENDING", target: "고객사 담당자" },
-  { id: "apv_002", title: "GS건설 VDI 산정표 외부 공유", type: "EXTERNAL_SHARE", risk: "MEDIUM", status: "PENDING", target: "GS ITM" },
-  { id: "apv_003", title: "한라IMS SASE 구성안 파트너 공유", type: "EXTERNAL_SHARE", risk: "HIGH", status: "PENDING", target: "파트너" },
+  { id: "apv_001", title: "성우하이텍 POC VM 정보 요청 메일 발송", type: "SEND_EMAIL", risk: "MEDIUM", status: "PENDING", target: "고객사 담당자", reason: "외부 발송은 승인 후 처리해야 합니다." },
+  { id: "apv_002", title: "GS건설 VDI 산정표 외부 공유", type: "EXTERNAL_SHARE", risk: "MEDIUM", status: "PENDING", target: "GS ITM", reason: "외부 공유는 승인 후 처리해야 합니다." },
+  { id: "apv_003", title: "한라IMS SASE 구성안 파트너 공유", type: "EXTERNAL_SHARE", risk: "HIGH", status: "PENDING", target: "파트너", reason: "외부 공유는 승인 후 처리해야 합니다." },
 ];
 
 export const runs = [
