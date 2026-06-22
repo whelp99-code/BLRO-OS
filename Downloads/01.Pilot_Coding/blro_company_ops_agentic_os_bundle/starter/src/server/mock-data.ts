@@ -37,10 +37,16 @@ export const approvals = [
   { id: "apv_003", title: "한라IMS SASE 구성안 파트너 공유", type: "EXTERNAL_SHARE", risk: "HIGH", status: "PENDING", target: "파트너", reason: "외부 공유는 승인 후 처리해야 합니다." },
 ];
 
+export const workflows = [
+  { id: "wf_001", name: "매일 운영 브리핑", trigger: "SCHEDULE", agent: "대표 에이전트", status: "ON", approvalRule: "고위험 액션 발견 시 승인 대기" },
+  { id: "wf_002", name: "고객 메일 분석", trigger: "EMAIL", agent: "운영자동화 매니저", status: "ON", approvalRule: "외부 발송 전 승인" },
+  { id: "wf_003", name: "견적 발송 승인", trigger: "MANUAL", agent: "견적/제안 에이전트", status: "ON", approvalRule: "견적/외부공유는 승인 필수" },
+];
+
 export const runs = [
-  { id: "run_001", task: "메일 분석 및 프로젝트 연결", agent: "운영자동화 매니저", status: "SUCCESS", duration: "8s", risk: "LOW" },
-  { id: "run_002", task: "SAP ERP DR 필요정보 체크리스트 생성", agent: "프리세일즈 에이전트", status: "SUCCESS", duration: "14s", risk: "MEDIUM" },
-  { id: "run_003", task: "견적 발송 승인 요청", agent: "견적/제안 에이전트", status: "WAITING_APPROVAL", duration: "5s", risk: "MEDIUM" },
+  { id: "run_001", task: "메일 분석 및 프로젝트 연결", agent: "운영자동화 매니저", status: "SUCCESS", duration: "8s", risk: "LOW", steps: 4, approval: "N/A", context: "성우하이텍 메일 수신" },
+  { id: "run_002", task: "SAP ERP DR 필요정보 체크리스트 생성", agent: "프리세일즈 에이전트", status: "SUCCESS", duration: "14s", risk: "MEDIUM", steps: 6, approval: "N/A", context: "HDR 기술검토" },
+  { id: "run_003", task: "견적 발송 승인 요청", agent: "견적/제안 에이전트", status: "WAITING_APPROVAL", duration: "5s", risk: "MEDIUM", steps: 3, approval: "PENDING", context: "외부 공유 예정" },
 ];
 
 export const finance = {
