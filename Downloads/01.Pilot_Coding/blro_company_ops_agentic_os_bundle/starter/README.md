@@ -2,6 +2,10 @@
 
 베를로 회사 운영 자동화 MVP를 위한 Next.js App Router 스타터 코드입니다.
 
+## 검증
+
+- `npm install` 후 `npm run build`로 빌드 확인 가능
+
 ## 실행
 
 ```bash
