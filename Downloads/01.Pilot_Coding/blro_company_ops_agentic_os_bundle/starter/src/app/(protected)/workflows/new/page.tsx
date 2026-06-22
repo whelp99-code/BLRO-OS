@@ -1,0 +1,1 @@
+import { PageHeader } from "@/components/common/page-header"; export default function NewWorkflowPage(){return <PageHeader title="새 워크플로우" description="Trigger → Agent → Action → Output → Approval Rule 순서로 설정한다."/>}

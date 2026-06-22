@@ -1,0 +1,1 @@
+import { PageHeader } from "@/components/common/page-header"; export default function Page(){return <PageHeader title="Settings / Connections" description="Gmail, Outlook, Calendar, Slack, Notion, Sheets 연결 상태를 관리한다."/>}

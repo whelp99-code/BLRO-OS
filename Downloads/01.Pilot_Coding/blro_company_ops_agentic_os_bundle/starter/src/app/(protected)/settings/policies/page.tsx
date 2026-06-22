@@ -1,0 +1,1 @@
+import { PageHeader } from "@/components/common/page-header"; export default function Page(){return <PageHeader title="Settings / Policies" description="외부 발송 승인, 삭제 차단, 비용성 액션 제한, 민감정보 마스킹을 설정한다."/>}
