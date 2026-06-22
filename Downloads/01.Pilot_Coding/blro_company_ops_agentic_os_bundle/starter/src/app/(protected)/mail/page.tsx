@@ -15,6 +15,7 @@ export default function MailPage() {
           { key: "type", header: "유형" },
           { key: "priority", header: "우선순위", render: (row) => <StatusBadge value={String(row.priority)} /> },
           { key: "extractedRequest", header: "추출 요청" },
+          { key: "suggestedReply", header: "답장 초안" },
         ]}
       />
     </div>

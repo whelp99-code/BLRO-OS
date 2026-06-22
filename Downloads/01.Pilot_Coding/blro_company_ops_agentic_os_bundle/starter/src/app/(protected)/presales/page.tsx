@@ -1,7 +1,6 @@
 import { PageHeader } from "@/components/common/page-header";
 import { projects } from "@/server/mock-data";
-
-const checklist = ["대상 VM 리스트", "CPU / Memory / Disk", "VLAN / IP 대역", "RTO / RPO", "백업/DR 방식", "PoC 일정"];
+import { buildPresalesChecklist } from "@/server/services/presales-service";
 
 export default function PresalesPage() {
   return (
@@ -10,17 +9,22 @@ export default function PresalesPage() {
       <div className="grid gap-4 xl:grid-cols-2">
         {projects
           .filter((project) => ["HDR", "VDI", "SASE"].includes(project.productFamily))
-          .map((project) => (
-            <section key={project.id} className="card">
-              <h2 className="font-semibold">{project.name}</h2>
-              <p className="mt-2 text-sm text-slate-500">{project.nextAction}</p>
-              <ul className="mt-4 grid gap-2 text-sm">
-                {checklist.map((item) => (
-                  <li key={item}>□ {item}</li>
-                ))}
-              </ul>
-            </section>
-          ))}
+          .map((project) => {
+            const checklist = buildPresalesChecklist(project.productFamily);
+
+            return (
+              <section key={project.id} className="card">
+                <h2 className="font-semibold">{project.name}</h2>
+                <p className="mt-2 text-sm text-slate-500">{project.nextAction}</p>
+                <p className="mt-3 text-xs uppercase tracking-wide text-slate-400">Approval-first checklist</p>
+                <ul className="mt-4 grid gap-2 text-sm">
+                  {checklist.checklist.map((item) => (
+                    <li key={item}>□ {item}</li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
       </div>
     </div>
   );

@@ -6,5 +6,10 @@ export function buildPresalesChecklist(productFamily: string) {
     SASE: ["사용자 수", "접속 국가", "POP 경로", "Connector 위치", "트래픽 우회 범위"],
     VDI: ["사용자 수", "VM당 vCPU", "VM당 Memory", "프로파일", "동시 접속률"],
   };
-  return [...common, ...(byProduct[productFamily] ?? [])];
+
+  return {
+    checklist: [...common, ...(byProduct[productFamily] ?? [])],
+    customerReplyApproved: false,
+    vendorQuestionApproved: false,
+  };
 }
