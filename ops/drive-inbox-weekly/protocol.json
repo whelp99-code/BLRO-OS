@@ -1,0 +1,43 @@
+{
+  "protocol": "Drive Protocol v1.0",
+  "account": "jm.park830202@gmail.com",
+  "owner": "Cursor",
+  "inboxFolderId": "10ebaHUsXCwjt_I9siN7UanViD0CnPioA",
+  "timezone": "Asia/Seoul",
+  "localSchedule": "Monday 10:00",
+  "cronUtc": "0 1 * * 1",
+  "cronMeaning": "Monday 01:00 UTC = Monday 10:00 Asia/Seoul (KST, UTC+9, no DST)",
+  "mode": "dry-run",
+  "roots": {
+    "00_INBOX": "10ebaHUsXCwjt_I9siN7UanViD0CnPioA",
+    "01_PROJECTS": "10gFkJhAqANwkPv-KPRHvKR99daMfdINt",
+    "02_AREAS": "1nnDHH4oWcj7xIk9LinOEJPXQG2NSs1of",
+    "03_RESOURCES": "1oEJnzUVxbXUnPXu7jUiBfRBxKE4JC_8e",
+    "04_INFRA_IMAGES": "1KBB4erQr8Oo4vJkvRuk4dPlp2G0M2esk",
+    "05_ARCHIVES": "1VaATB8jiCoRuF54-SXa-zixZks3hg15S"
+  },
+  "areas": [
+    "Partner_Management",
+    "Legal_Corporate",
+    "Sales_Operations",
+    "Finance_Accounting",
+    "Business_OS",
+    "Partner_Contracts"
+  ],
+  "buckets": {
+    "A": "Unique full 01_PROJECTS folder name present in the file name. Propose a move. Do not create a project.",
+    "B": "Unique full 02_AREAS folder name present in the file name. Propose a move.",
+    "C": "Unambiguous installer or virtual-disk extension. Propose 04_INFRA_IMAGES.",
+    "D": "OS junk only. Trash is proposed and execution stays blocked.",
+    "E": "UNKNOWN. Leave the file in 00_INBOX and list it for 재민."
+  },
+  "notAutoProposed": ["03_RESOURCES", "05_ARCHIVES"],
+  "forbidden": [
+    "external email",
+    "trash",
+    "delete",
+    "irreversible delete",
+    "live move",
+    "invented project mapping"
+  ]
+}

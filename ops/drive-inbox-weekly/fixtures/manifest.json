@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "a1",
+      "name": "notes_2026_Example_Alpha.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": "b1",
+      "name": "Finance_Accounting_2026.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    },
+    {
+      "id": "c1",
+      "name": "vendor_setup.exe",
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "id": "d1",
+      "name": ".DS_Store",
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "id": "e1",
+      "name": "2026_Example_Alpha_2026_Example_Beta.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": "e2",
+      "name": "random-scan.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": "e3",
+      "name": "Copy of random-scan.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": "d2",
+      "name": "partial.exe.crdownload",
+      "mimeType": "application/octet-stream"
+    },
+    {
+      "id": "e4",
+      "name": "preSales_Operations.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": "e5",
+      "name": "photo.png",
+      "mimeType": "image/png"
+    }
+  ]
+}

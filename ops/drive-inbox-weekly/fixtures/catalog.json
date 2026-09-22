@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {"name": "2026_Example_Alpha", "autoMatch": true},
+    {"name": "2026_Example_Beta", "autoMatch": true},
+    {"name": "_General", "autoMatch": false},
+    {"name": ".hermes", "autoMatch": false}
+  ],
+  "areas": [
+    "Partner_Management",
+    "Legal_Corporate",
+    "Sales_Operations",
+    "Finance_Accounting",
+    "Business_OS",
+    "Partner_Contracts"
+  ]
+}

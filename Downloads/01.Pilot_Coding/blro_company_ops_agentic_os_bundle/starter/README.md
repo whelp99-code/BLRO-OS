@@ -33,6 +33,10 @@ npm run dev
 - Command Center용 task router / approval gateway 샘플
 - BLRO 운영 페르소나 기반 seed/mock 데이터
 
+## Drive 00_INBOX weekly classification
+
+Cursor owns a weekly dry-run of residual files in Google Drive `00_INBOX` (account `jm.park830202@gmail.com`, Drive Protocol v1.0). Schedule: Monday 10:00 Asia/Seoul (`0 1 * * 1` UTC). The job proposes buckets A/B/C/D/E only. Ambiguous files are UNKNOWN (bucket E), stay in `00_INBOX`, and are listed for 재민 to confirm. External email, trash, delete, and live moves are forbidden. `--apply` is refused. Details: `ops/drive-inbox-weekly/README.md`.
+
 ## 개발 원칙
 
 - page.tsx는 얇게 유지한다.

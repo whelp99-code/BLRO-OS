@@ -1,0 +1,32 @@
+name: drive-inbox-weekly
+
+on:
+  schedule:
+    # Monday 10:00 Asia/Seoul. GitHub cron is UTC (01:00 UTC = 10:00 KST).
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Classify fixture manifest
+        run: >
+          python3 ops/drive-inbox-weekly/classify_inbox.py
+          --manifest ops/drive-inbox-weekly/fixtures/manifest.json
+          --catalog ops/drive-inbox-weekly/fixtures/catalog.json
+          --out proposal.json
+      - name: Unit tests
+        run: python3 ops/drive-inbox-weekly/test_classify_inbox.py
+      - name: Upload dry-run proposal
+        uses: actions/upload-artifact@v4
+        with:
+          name: inbox-classification-proposal
+          path: proposal.json
+          if-no-files-found: error
